@@ -118,43 +118,38 @@ namespace FunctionChallenges
 
             }
 
-            // Uncomment to test the GuessingGame method
+
 
             // // GuessingGame(); // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
 
-            // // Challenge 4: Simple Word Reversal
-            // Console.WriteLine("\nChallenge 4: Simple Word Reversal");
-            // string sentence = "This is the original sentence!";
-            // string reversed = ReverseWords(sentence);
-            // Console.WriteLine(reversed); // Expected outcome: "sihT si eht lanigiro !ecnetnes"
+            // Challenge 4: Simple Word Reversal
+            Console.WriteLine("\nChallenge 4: Simple Word Reversal");
+            string sentence = "This is the original sentence!";
+
+
+
+            string ReverseWords(string sentence)
+            {
+                string[] words = sentence.Split();
+                List<string> reversedWords = [];
+                foreach (string word in words)
+                {
+                    // Console.WriteLine(string.Join("", word.Reverse()));
+                    string reversed = String.Join("", word.Reverse());
+                    reversedWords.Add(reversed);
+                }
+
+                Console.WriteLine(string.Join(" ", reversedWords));
+                return "";
+            }
+
+
+            string reversed = ReverseWords(sentence);
+
+            Console.WriteLine(reversed); // Expected outcome: "sihT si eht lanigiro !ecnetnes"
 
             // */
 
-            // Func<int, int, int> Multiplay = (x, y) => x * y;
-            // Console.WriteLine(Multiplay(3, 50));
-
-            // // Console.WriteLine(SumAll(1, 2, 3, 4, 5));
-            // Console.WriteLine(SumAll(1, 2, 3));
-            // Console.WriteLine(SumAll(1, 2));
-
-            // int SumAll(params int [] numbers) {
-            //     int total =0;
-            //     foreach (int num in numbers)
-            //     {
-
-            //     }
-            //     return total;
-            // }
-
-            // int x = 10;
-            // test(ref x, out int y);
-
-            // void test (ref int x, out int y){
-            //     y = 4;
-            //     x *= 3;
-            // }
-            // Console.WriteLine($"y = {y}");
-            // Console.WriteLine($"x = {x}");
 
         }
     }
