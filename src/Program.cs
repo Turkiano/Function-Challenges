@@ -73,54 +73,56 @@ namespace FunctionChallenges
 
             // Challenge 3: Guessing Game
             Console.WriteLine("\nChallenge 3: Guessing Game");
-
-            Random game = new Random();
-            int guess = game.Next(1, 10);
-            // Console.WriteLine("The Random number is:" + guess);
-
-            // int guessNumber = input
-
-
-
-            while (true)
+            void GuessingGame()
             {
-                Console.WriteLine("Guess a number between (1 - 10)\n or type (quit) to leave the guessing game");
-                string? input = Console.ReadLine();
+                Random game = new Random();
+                int guess = game.Next(1, 10);
+                // Console.WriteLine("The Random number is:" + guess);
 
-                if (input == "" || input is null || input.ToLower() == "quit")
+                // int guessNumber = input
+
+
+
+                while (true)
                 {
-                    Console.WriteLine("Terminated");
-                    break;
-                }
+                    Console.WriteLine("Guess a number between (1 - 10)\n or type (quit) to leave the guessing game");
+                    string? input = Console.ReadLine();
 
-                int guessNumber;
-
-
-                if (int.TryParse(input, out guessNumber))
-                {
-                    if (guessNumber == guess)
+                    if (input == "" || input is null || input.ToLower() == "quit")
                     {
-                        Console.WriteLine("Congratulation! You gussed the right number");
+                        Console.WriteLine("Terminated");
                         break;
+                    }
+
+                    int guessNumber;
+
+
+                    if (int.TryParse(input, out guessNumber))
+                    {
+                        if (guessNumber == guess)
+                        {
+                            Console.WriteLine("Congratulation! You gussed the right number");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You are bad with guessing. Try again.");
+                        }
+
                     }
                     else
                     {
-                        Console.WriteLine("You are bad with guessing. Try again.");
+                        Console.WriteLine("Wrong asnwer, please enter a number or type quit.");
                     }
 
+
+
                 }
-                else
-                {
-                    Console.WriteLine("Wrong asnwer, please enter a number or type quit.");
-                }
-
-
-
             }
 
 
 
-            // // GuessingGame(); // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
+            GuessingGame(); // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
 
             // Challenge 4: Simple Word Reversal
             Console.WriteLine("\nChallenge 4: Simple Word Reversal");
